@@ -1,17 +1,17 @@
 %include	/usr/lib/rpm/macros.php
 %define		_class		Math
 %define		_subclass	Stats
-%define		_status		beta
+%define		_status		stable
 
 %define		_pearname	%{_class}_%{_subclass}
 Summary:	%{_class}_%{_subclass} - Classes to calculate statistical parameters
 Summary(pl):	%{_class}_%{_subclass} - klasy do obliczania parametrów statystycznych
 Name:		php-pear-%{_pearname}
-Version:	0.8.3
-Release:	3
+Version:	0.8.5
+Release:	1
 License:	PHP 2.02
 Group:		Development/Languages/PHP
-# Source0-md5:	215589c8f62642fadf43ddb5a102094f
+# Source0-md5:	b3b5e1578105ecbf00b24e455f2b6d36
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
 URL:		http://pear.php.net/
 BuildRequires:	rpm-php-pearprov >= 4.0.2-98
