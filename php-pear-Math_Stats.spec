@@ -27,7 +27,7 @@ the number of repeats as the value for the array item, e.g. $data =
 array(3=>4, 2.3=>5, 1.25=>6, 0.5=>3). Nulls can be rejected, ignored
 or handled as zero values.
 
-This class has in PEAR status: %{_status}.
+In PEAR status of this package is: %{_status}.
 
 %description -l pl
 Ten pakiet zawiera klasy s³u¿±ce do obliczania parametrów
