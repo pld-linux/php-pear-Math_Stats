@@ -2,13 +2,13 @@
 %define		_class		Math
 %define		_subclass	Stats
 %define		_status		beta
-
 %define		_pearname	%{_class}_%{_subclass}
+
 Summary:	%{_class}_%{_subclass} - Classes to calculate statistical parameters
 Summary(pl):	%{_class}_%{_subclass} - klasy do obliczania parametrów statystycznych
 Name:		php-pear-%{_pearname}
 Version:	0.9.0
-Release:	0.beta3
+Release:	0.beta3.1
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}beta3.tgz
