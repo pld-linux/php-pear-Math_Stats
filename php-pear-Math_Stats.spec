@@ -13,7 +13,7 @@ License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}beta3.tgz
 # Source0-md5:	ffc0b653e5e2985113262a5299ebe69b
-URL:		http://pear.php.net/package/%{_pearname}/
+URL:		http://pear.php.net/package/Math_Stats/
 BuildRequires:	rpm-php-pearprov >= 4.0.2-98
 Requires:	php-pear
 BuildArch:	noarch
