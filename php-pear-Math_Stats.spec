@@ -1,18 +1,18 @@
 %include	/usr/lib/rpm/macros.php
 %define		_class		Math
 %define		_subclass	Stats
-%define		_status		stable
+%define		_status		beta
 
 %define		_pearname	%{_class}_%{_subclass}
 Summary:	%{_class}_%{_subclass} - Classes to calculate statistical parameters
 Summary(pl):	%{_class}_%{_subclass} - klasy do obliczania parametrów statystycznych
 Name:		php-pear-%{_pearname}
-Version:	0.8.5
-Release:	1
+Version:	0.9.0
+Release:	0.beta3
 License:	PHP 2.02
 Group:		Development/Languages/PHP
-# Source0-md5:	b3b5e1578105ecbf00b24e455f2b6d36
-Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
+Source0:	http://pear.php.net/get/%{_pearname}-%{version}beta3.tgz
+# Source0-md5:	ffc0b653e5e2985113262a5299ebe69b
 URL:		http://pear.php.net/
 BuildRequires:	rpm-php-pearprov >= 4.0.2-98
 Requires:	php-pear
@@ -46,12 +46,12 @@ Ta klasa ma w PEAR status: %{_status}
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}
 
-install %{_pearname}-%{version}/*.php	$RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/
+install %{_pearname}-%{version}beta3/*.php	$RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc %{_pearname}-%{version}/{examples/*,README*}
+%doc %{_pearname}-%{version}beta3/{examples/*,README*}
 %{php_pear_dir}/%{_class}/*.php
