@@ -6,7 +6,7 @@ Summary:	%{_class}_%{_subclass} - Classes to calculate statistical parameters
 Summary(pl):	%{_class}_%{_subclass} - klasy do obliczania parametrów statystycznych
 Name:		php-pear-%{_pearname}
 Version:	0.8.3
-Release:	1
+Release:	2
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
