@@ -3,7 +3,7 @@
 %define		_subclass	Stats
 %define		_pearname	%{_class}_%{_subclass}
 Summary:	%{_class}_%{_subclass} - Classes to calculate statistical parameters
-Summary(pl):	%{_class}_%{_subclass} -
+Summary(pl):	%{_class}_%{_subclass} - klasy do obliczania parametrów statystycznych
 Name:		php-pear-%{_pearname}
 Version:	0.8.3
 Release:	1
@@ -23,6 +23,14 @@ numerical array. A cummulative array, has the value as the index and
 the number of repeats as the value for the array item, e.g. $data =
 array(3=>4, 2.3=>5, 1.25=>6, 0.5=>3). Nulls can be rejected, ignored
 or handled as zero values.
+
+%description -l pl
+Ten pakiet zawiera klasy s³u¿±ce do obliczania parametrów
+statystycznych z tablic danych. Dane mog± byæ w zwyk³ej tablicy
+numerycznej lub w tablicy skumulowanej. Tablica skumulowana zawiera
+indeksy i liczby wyst±pieñ warto¶ci dla elementu tablicy, np. $data =
+array(3=>4, 2.3=>5, 1.25=>6, 0.5=>3). Puste elementy mog± byæ
+odrzucone, ignorowane lub taktowane jako warto¶ci zerowe.
 
 %prep
 %setup -q -c
