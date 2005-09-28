@@ -8,13 +8,15 @@ Summary:	%{_class}_%{_subclass} - Classes to calculate statistical parameters
 Summary(pl):	%{_class}_%{_subclass} - klasy do obliczania parametrów statystycznych
 Name:		php-pear-%{_pearname}
 Version:	0.9.0
-Release:	0.beta3.1
+%define	_beta beta3
+%define	_rel 1.1
+Release:	0.%{_beta}.%{_rel}
 License:	PHP 2.02
 Group:		Development/Languages/PHP
-Source0:	http://pear.php.net/get/%{_pearname}-%{version}beta3.tgz
+Source0:	http://pear.php.net/get/%{_pearname}-%{version}%{_beta}.tgz
 # Source0-md5:	ffc0b653e5e2985113262a5299ebe69b
 URL:		http://pear.php.net/package/Math_Stats/
-BuildRequires:	rpm-php-pearprov >= 4.0.2-98
+BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 Requires:	php-pear
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -39,19 +41,43 @@ odrzucone, ignorowane lub taktowane jako warto¶ci zerowe.
 
 Ta klasa ma w PEAR status: %{_status}.
 
+%package tests
+Summary:	Tests for PEAR::%{_pearname}
+Summary(pl):	Testy dla PEAR::%{_pearname}
+Group:		Development
+Requires:	%{name} = %{epoch}:%{version}-%{release}
+AutoReq:	no
+
+%description tests
+Tests for PEAR::%{_pearname}.
+
+%description tests -l pl
+Testy dla PEAR::%{_pearname}.
+
 %prep
-%setup -q -c
+%pear_package_setup
+
+install -d docs/%{_pearname}/examples
+mv ./%{php_pear_dir}/%{_class}/examples/* docs/%{_pearname}/examples
+
+install -d ./%{php_pear_dir}/tests/%{_pearname}
+mv ./%{php_pear_dir}/{%{_class}/test/*,tests/%{_pearname}}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}
-
-install %{_pearname}-%{version}beta3/*.php	$RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/
+install -d $RPM_BUILD_ROOT%{php_pear_dir}
+%pear_package_install
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc %{_pearname}-%{version}beta3/{examples/*,README*}
+%doc install.log
+%doc docs/%{_pearname}/*
+%{php_pear_dir}/.registry/*.reg
 %{php_pear_dir}/%{_class}/*.php
+
+%files tests
+%defattr(644,root,root,755)
+%{php_pear_dir}/tests/*
