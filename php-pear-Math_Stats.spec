@@ -11,6 +11,7 @@ Version:	0.9.0
 %define	_beta beta3
 %define	_rel 2
 Release:	0.%{_beta}.%{_rel}
+Epoch:		0
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}%{_beta}.tgz
