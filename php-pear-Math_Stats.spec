@@ -9,7 +9,7 @@ Summary(pl):	%{_class}_%{_subclass} - klasy do obliczania parametrów statystyczn
 Name:		php-pear-%{_pearname}
 Version:	0.9.0
 %define	_beta beta3
-%define	_rel 2
+%define	_rel 3
 Release:	0.%{_beta}.%{_rel}
 Epoch:		0
 License:	PHP 2.02
