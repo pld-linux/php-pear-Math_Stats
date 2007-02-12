@@ -5,7 +5,7 @@
 %define		_pearname	%{_class}_%{_subclass}
 
 Summary:	%{_class}_%{_subclass} - Classes to calculate statistical parameters
-Summary(pl):	%{_class}_%{_subclass} - klasy do obliczania parametrów statystycznych
+Summary(pl.UTF-8):   %{_class}_%{_subclass} - klasy do obliczania parametrÃ³w statystycznych
 Name:		php-pear-%{_pearname}
 Version:	0.9.0
 %define	_beta beta3
@@ -34,19 +34,19 @@ or handled as zero values.
 
 In PEAR status of this package is: %{_status}.
 
-%description -l pl
-Ten pakiet zawiera klasy s³u¿±ce do obliczania parametrów
-statystycznych z tablic danych. Dane mog± byæ w zwyk³ej tablicy
+%description -l pl.UTF-8
+Ten pakiet zawiera klasy sÅ‚uÅ¼Ä…ce do obliczania parametrÃ³w
+statystycznych z tablic danych. Dane mogÄ… byÄ‡ w zwykÅ‚ej tablicy
 numerycznej lub w tablicy skumulowanej. Tablica skumulowana zawiera
-indeksy i liczby wyst±pieñ warto¶ci dla elementu tablicy, np. $data =
-array(3=>4, 2.3=>5, 1.25=>6, 0.5=>3). Puste elementy mog± byæ
-odrzucone, ignorowane lub taktowane jako warto¶ci zerowe.
+indeksy i liczby wystÄ…pieÅ„ wartoÅ›ci dla elementu tablicy, np. $data =
+array(3=>4, 2.3=>5, 1.25=>6, 0.5=>3). Puste elementy mogÄ… byÄ‡
+odrzucone, ignorowane lub taktowane jako wartoÅ›ci zerowe.
 
 Ta klasa ma w PEAR status: %{_status}.
 
 %package tests
 Summary:	Tests for PEAR::%{_pearname}
-Summary(pl):	Testy dla PEAR::%{_pearname}
+Summary(pl.UTF-8):   Testy dla PEAR::%{_pearname}
 Group:		Development/Languages/PHP
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 AutoReq:	no
@@ -55,7 +55,7 @@ AutoProv:	no
 %description tests
 Tests for PEAR::%{_pearname}.
 
-%description tests -l pl
+%description tests -l pl.UTF-8
 Testy dla PEAR::%{_pearname}.
 
 %prep
