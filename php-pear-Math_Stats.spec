@@ -9,7 +9,7 @@ Summary(pl.UTF-8):	%{_class}_%{_subclass} - klasy do obliczania parametrów stat
 Name:		php-pear-%{_pearname}
 Version:	0.9.0
 %define	_beta beta3
-%define	_rel 3
+%define	_rel 4
 Release:	0.%{_beta}.%{_rel}
 Epoch:		0
 License:	PHP 2.02
