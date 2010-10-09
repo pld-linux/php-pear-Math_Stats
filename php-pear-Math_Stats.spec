@@ -1,21 +1,15 @@
 %include	/usr/lib/rpm/macros.php
-%define		_class		Math
-%define		_subclass	Stats
 %define		_status		beta
-%define		_pearname	%{_class}_%{_subclass}
-
-Summary:	%{_class}_%{_subclass} - Classes to calculate statistical parameters
-Summary(pl.UTF-8):	%{_class}_%{_subclass} - klasy do obliczania parametrów statystycznych
+%define		_pearname	Math_Stats
+Summary:	Math_Stats - Classes to calculate statistical parameters
+Summary(pl.UTF-8):	Math_Stats - klasy do obliczania parametrów statystycznych
 Name:		php-pear-%{_pearname}
-Version:	0.9.0
-%define	_beta beta3
-%define	_rel 4
-Release:	0.%{_beta}.%{_rel}
-Epoch:		0
+Version:	0.9.1
+Release:	1
 License:	PHP 2.02
 Group:		Development/Languages/PHP
-Source0:	http://pear.php.net/get/%{_pearname}-%{version}%{_beta}.tgz
-# Source0-md5:	ffc0b653e5e2985113262a5299ebe69b
+Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
+# Source0-md5:	afb06c6975bd1a53c97a8db4fd5d3546
 URL:		http://pear.php.net/package/Math_Stats/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
@@ -44,33 +38,25 @@ odrzucone, ignorowane lub taktowane jako wartości zerowe.
 
 Ta klasa ma w PEAR status: %{_status}.
 
-%package tests
-Summary:	Tests for PEAR::%{_pearname}
-Summary(pl.UTF-8):	Testy dla PEAR::%{_pearname}
-Group:		Development/Languages/PHP
-Requires:	%{name} = %{epoch}:%{version}-%{release}
-AutoReq:	no
-AutoProv:	no
-
-%description tests
-Tests for PEAR::%{_pearname}.
-
-%description tests -l pl.UTF-8
-Testy dla PEAR::%{_pearname}.
 
 %prep
 %pear_package_setup
 
-install -d docs/%{_pearname}/examples
-mv ./%{php_pear_dir}/%{_class}/examples/* docs/%{_pearname}/examples
+mv docs/%{_pearname}/docs/examples .
 
-install -d ./%{php_pear_dir}/tests/%{_pearname}
-mv ./%{php_pear_dir}/{%{_class}/test/*,tests/%{_pearname}}
+mv .%{php_pear_dir}/contrib .
+mv .%{php_pear_dir}/data/Math_Stats/contrib/ignatius_reilly/* contrib
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{php_pear_dir}
 %pear_package_install
+
+install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+cp -a examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+
+# tests should not be packaged
+rm -rf $RPM_BUILD_ROOT%{php_pear_dir}/tests/%{_pearname}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -78,10 +64,8 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc install.log
-%doc docs/%{_pearname}/*
+%doc docs/%{_pearname}/docs/* contrib
 %{php_pear_dir}/.registry/*.reg
-%{php_pear_dir}/%{_class}/*.php
+%{php_pear_dir}/Math/Stats.php
 
-%files tests
-%defattr(644,root,root,755)
-%{php_pear_dir}/tests/*
+%{_examplesdir}/%{name}-%{version}
