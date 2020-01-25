@@ -1,4 +1,3 @@
-%include	/usr/lib/rpm/macros.php
 %define		_status		beta
 %define		_pearname	Math_Stats
 Summary:	Math_Stats - Classes to calculate statistical parameters
