@@ -4,7 +4,7 @@ Summary:	Math_Stats - Classes to calculate statistical parameters
 Summary(pl.UTF-8):	Math_Stats - klasy do obliczania parametrów statystycznych
 Name:		php-pear-%{_pearname}
 Version:	0.9.1
-Release:	1
+Release:	2
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
